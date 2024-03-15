@@ -1,0 +1,22 @@
+{
+    "name": "nobuild-boilerplate",
+    "version": "0.0.1",
+    "description": "",
+    "private": false,
+    "keywords": [
+        ""
+    ],
+    "license": "",
+    "author": "",
+    "scripts": {
+        "dev": "live-server"
+    },
+    "devDependencies": {
+        "live-server": "^1.2.2"
+    },
+    "dependencies": {
+        "koa": "^2.15.0",
+        "koa-router": "^12.0.1",
+        "koa-static": "^5.0.0"
+    }
+}
