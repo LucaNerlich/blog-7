@@ -17,7 +17,8 @@ async function loadFooter(footer) {
 
 async function setupTheme(themeSwitcher) {
     // set default theme
-    document.documentElement.setAttribute('data-theme', 'light');
+    const cachedTheme = localStorage.getItem('theme');
+    document.documentElement.setAttribute('data-theme', cachedTheme ? cachedTheme : 'light');
 
     // setup theme-switcher button
     if (themeSwitcher) {
@@ -25,8 +26,10 @@ async function setupTheme(themeSwitcher) {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             if (currentTheme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
             }
         });
     }
