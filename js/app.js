@@ -1,4 +1,5 @@
 import {loadFooter, loadHeader, setupTheme} from "./blocks/base.js";
+import {loadScript} from "./vendor/helix.js";
 
 
 /**
@@ -28,7 +29,7 @@ async function loadInitial(doc) {
  * @param {Document} doc The container element
  */
 function loadLazy(doc) {
-    // e.g load blogposts etc
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js').then(() => hljs.highlightAll());
 }
 
 /**
@@ -37,7 +38,7 @@ function loadLazy(doc) {
  */
 function loadDelayed() {
     // eslint-disable-next-line import/no-cycle
-    window.setTimeout(() => import('./delayed.js'), 3000);
+    window.setTimeout(() => import('./delayed.js'), 1000);
     // load anything that can be postponed to the latest here
 }
 
