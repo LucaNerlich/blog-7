@@ -1,6 +1,4 @@
 import {loadFooter, loadHeader, setupTheme} from "./blocks/base.js";
-import {loadScript} from "./vendor/helix.js";
-
 
 /**
  * Loads everything needed for the initial page.
