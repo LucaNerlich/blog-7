@@ -8,7 +8,7 @@ async function loadScript(src, attrs) {
         if (!document.querySelector(`head > script[src="${src}"]`)) {
             const script = document.createElement('script');
             script.src = src;
-            script.defer = true;
+            script.async = true;
             if (attrs) {
                 // eslint-disable-next-line no-restricted-syntax, guard-for-in
                 for (const attr in attrs) {
