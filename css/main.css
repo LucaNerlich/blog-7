@@ -4,7 +4,8 @@
 @import url('style.css');
 
 /* Vendor */
-@import url('vendor/highlightjs-11.9.0.css');
+/*@import url('vendor/highlightjs-11.9.0.css');*/
+@import url('vendor/prism.css');
 
 main {
     margin: 0 auto;
