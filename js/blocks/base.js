@@ -18,8 +18,6 @@ async function loadFooter(footer) {
 async function setupTheme(themeSwitcher) {
     // set default theme
     document.documentElement.setAttribute('data-theme', 'light');
-    console.log("document.documentElement", document.documentElement);
-
 
     // setup theme-switcher button
     if (themeSwitcher) {
