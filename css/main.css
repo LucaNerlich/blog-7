@@ -3,6 +3,9 @@
 @import url('theme.css');
 @import url('style.css');
 
+/* Vendor */
+@import url('vendor/highlightjs-11.9.0.css');
+
 main {
     margin: 0 auto;
     max-width: 90%;
