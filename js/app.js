@@ -24,12 +24,33 @@ async function loadInitial(doc) {
     }
 }
 
+const HIGHLIGHT_JS_VERSION = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/';
+const SCRIPT_LIST = [
+    'highlight.min.js',
+    'languages/xml.min.js',
+    'languages/bash.min.js',
+    'languages/css.min.js',
+    'languages/java.min.js',
+    'languages/javascript.min.js',
+    'languages/typescript.min.js',
+    'languages/rust.min.js',
+    'languages/python.min.js',
+    'languages/json.min.js',
+    'languages/yaml.min.js',
+    'languages/dockerfile.min.js',
+    'languages/nginx.min.js',
+    'languages/scss.min.js',
+    'languages/markdown.min.js',
+];
+
 /**
  * Loads data lazily.
  * @param {Document} doc The container element
  */
-function loadLazy(doc) {
-    loadScript('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js').then(() => hljs.highlightAll());
+async function loadLazy(doc) {
+    await loadScript(HIGHLIGHT_JS_VERSION + SCRIPT_LIST.shift());
+    await Promise.all(SCRIPT_LIST.map((script) => loadScript(HIGHLIGHT_JS_VERSION + script)));
+    hljs.highlightAll();
 }
 
 /**
