@@ -14,3 +14,5 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages
 loadScript('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/nginx.min.js');
 loadScript('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/scss.min.js');
 loadScript('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/markdown.min.js');
+
+hljs.highlightAll();
