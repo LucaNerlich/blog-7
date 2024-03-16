@@ -23,7 +23,7 @@ async function loadFooter(footer) {
     footer.appendChild(greetings);
 }
 
-async function setupToc(tocList){
+async function setupToc(tocList) {
 }
 
 async function setupTheme(themeSwitcher) {
@@ -46,9 +46,15 @@ async function setupTheme(themeSwitcher) {
     }
 }
 
+async function setupSeo(main) {
+    const headline = main.querySelector('h1');
+    document.title = headline?.textContent;
+}
+
 export {
     loadHeader,
     loadFooter,
     setupToc,
+    setupSeo,
     setupTheme
 }

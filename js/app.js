@@ -1,4 +1,4 @@
-import {loadFooter, loadHeader, setupTheme, setupToc} from "./blocks/base.js";
+import {loadFooter, loadHeader, setupSeo, setupTheme, setupToc} from "./blocks/base.js";
 
 /**
  * Loads everything needed for the initial page.
@@ -13,6 +13,7 @@ async function loadInitial(doc) {
     await loadHeader(doc.querySelector('header'));
     await loadFooter(doc.querySelector('footer'));
     await setupToc(doc.getElementById("toc"));
+    await setupSeo(doc.querySelector("main"));
     await setupTheme(doc.getElementById('theme-switcher'));
 
     // Scroll into anchor view
@@ -46,6 +47,6 @@ async function loadPage() {
     loadDelayed();
 }
 
-loadPage().then(r => {
+loadPage().then(() => {
     console.debug("Page loaded.")
 });
