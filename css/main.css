@@ -26,4 +26,5 @@ p, ol, ul {
 
 a {
     color: var(--text-color);
+    font-weight: 500;
 }
