@@ -3,9 +3,9 @@
 @import url('theme.css');
 @import url('style.css');
 
-/* Vendor */
-/*@import url('vendor/highlightjs-11.9.0.css');*/
-@import url('vendor/prism.css');
+/* Blocks */
+@import url('blocks/footer.css');
+
 
 main {
     margin: 0 auto;
@@ -18,4 +18,8 @@ main {
 
 h1 {
     margin: 1rem 0;
+}
+
+p {
+    margin-bottom: 1rem;
 }

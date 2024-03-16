@@ -13,6 +13,14 @@ async function loadHeader(header) {
  * @returns {Promise}
  */
 async function loadFooter(footer) {
+    footer.appendChild(document.createElement('hr'));
+    const greetings = document.createElement('p');
+    greetings.textContent = "Luca. | "
+    const backHome = document.createElement('a');
+    backHome.href = "/";
+    backHome.textContent = "Startseite";
+    greetings.appendChild(backHome);
+    footer.appendChild(greetings);
 }
 
 async function setupTheme(themeSwitcher) {
