@@ -16,10 +16,16 @@ async function loadFooter(footer) {
     footer.appendChild(document.createElement('hr'));
     const greetings = document.createElement('p');
     greetings.textContent = "Luca. | "
+
     const backHome = document.createElement('a');
     backHome.href = "/";
     backHome.textContent = "Startseite";
     greetings.appendChild(backHome);
+
+    const themeSwitcher = document.createElement("span");
+    themeSwitcher.id = "theme-switcher";
+    themeSwitcher.textContent = " | ☀️ / 🌗"
+    greetings.appendChild(themeSwitcher);
     footer.appendChild(greetings);
 }
 

@@ -1,3 +1,8 @@
 footer {
     margin: 0 1rem;
 }
+
+#theme-switcher {
+    user-select: none;
+    cursor: pointer;
+}
