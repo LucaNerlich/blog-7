@@ -23,6 +23,9 @@ async function loadFooter(footer) {
     footer.appendChild(greetings);
 }
 
+async function setupToc(tocList){
+}
+
 async function setupTheme(themeSwitcher) {
     // set default theme
     const cachedTheme = localStorage.getItem('theme');
@@ -46,5 +49,6 @@ async function setupTheme(themeSwitcher) {
 export {
     loadHeader,
     loadFooter,
+    setupToc,
     setupTheme
 }
