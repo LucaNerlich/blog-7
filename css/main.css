@@ -23,3 +23,7 @@ h1 {
 p, ol, ul {
     margin-bottom: 1rem;
 }
+
+a {
+    color: var(--text-color);
+}
