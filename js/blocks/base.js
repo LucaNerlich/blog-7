@@ -7,6 +7,21 @@ async function loadHeader(header) {
 
 }
 
+function addUmamiAnalytics(head) {
+    const umamiScript = document.createElement('script')
+    umamiScript.src = 'https://umami-t8kgsg4o4wc4o80wgwwo484c.lucanerlich.com/script.js'
+    umamiScript.async = false
+    umamiScript.defer = true
+    umamiScript.setAttribute('data-website-id', 'da42909d-320f-45f7-a929-88d8e8c154c7')
+
+    // Insert the script into the head of the document
+    head.appendChild(umamiScript);
+}
+
+async function loadHead(head) {
+    addUmamiAnalytics(head);
+}
+
 /**
  * Loads a block named 'footer' into footer
  * @param footer footer element
@@ -59,6 +74,7 @@ async function setupSeo(main) {
 
 export {
     loadHeader,
+    loadHead,
     loadFooter,
     setupToc,
     setupSeo,

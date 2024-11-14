@@ -1,4 +1,4 @@
-import {loadFooter, loadHeader, setupSeo, setupTheme, setupToc} from "./blocks/base.js";
+import {loadFooter, loadHead, loadHeader, setupSeo, setupTheme, setupToc} from "./blocks/base.js";
 
 /**
  * Loads everything needed for the initial page.
@@ -10,6 +10,7 @@ async function loadInitial(doc) {
     if (main) {
     }
 
+    await loadHead(doc.querySelector('head'));
     await loadHeader(doc.querySelector('header'));
     await loadFooter(doc.querySelector('footer'));
     await setupToc(doc.getElementById("toc"));
