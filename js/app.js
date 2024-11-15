@@ -5,7 +5,10 @@ import {loadFooter, loadHead, loadHeader, setupSeo, setupTheme, setupToc} from "
  * @param {Document} doc The container element
  */
 async function loadInitial(doc) {
-    document.documentElement.lang = 'de';
+    document.documentElement.lang = 'en';
+    const main = doc.querySelector('main');
+    if (main) {
+    }
 
     await loadHead(doc.querySelector('head'));
     await loadHeader(doc.querySelector('header'));
@@ -22,8 +25,27 @@ async function loadInitial(doc) {
     }
 }
 
+/**
+ * Loads data lazily.
+ * @param {Document} doc The container element
+ */
+async function loadLazy(doc) {
+}
+
+/**
+ * Loads everything that happens a lot later,
+ * without impacting the user experience.
+ */
+function loadDelayed() {
+    // eslint-disable-next-line import/no-cycle
+    window.setTimeout(() => import('./delayed.js'), 1000);
+    // load anything that can be postponed to the latest here
+}
+
 async function loadPage() {
     await loadInitial(document);
+    loadLazy(document);
+    loadDelayed();
 }
 
 loadPage().then(() => {
