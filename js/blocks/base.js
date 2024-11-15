@@ -18,15 +18,83 @@ function addUmamiAnalytics(head) {
     head.appendChild(umamiScript);
 }
 
-async function loadHead(head) {
-    addUmamiAnalytics(head);
+function injectMeta(head) {
+    const metaCharset = document.createElement('meta');
+    metaCharset.setAttribute('charset', 'utf-8');
+    head.appendChild(metaCharset);
+
+    const metaViewport = document.createElement('meta');
+    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1');
+    metaViewport.setAttribute('name', 'viewport');
+    head.appendChild(metaViewport);
+
+    const linkCSS = document.createElement('link');
+    linkCSS.setAttribute('href', '/css/main.css');
+    linkCSS.setAttribute('rel', 'stylesheet');
+    head.appendChild(linkCSS);
+
+    const title = document.createElement('title');
+    title.textContent = 'Luca Nerlich';
+    head.appendChild(title);
+
+    const metaDescription = document.createElement('meta');
+    metaDescription.setAttribute('content', 'Luca Nerlich Games Blog');
+    metaDescription.setAttribute('name', 'description');
+    head.appendChild(metaDescription);
+
+    const metaOgTitle = document.createElement('meta');
+    metaOgTitle.setAttribute('content', '');
+    metaOgTitle.setAttribute('property', 'og:title');
+    head.appendChild(metaOgTitle);
+
+    const metaOgType = document.createElement('meta');
+    metaOgType.setAttribute('content', '');
+    metaOgType.setAttribute('property', 'og:type');
+    head.appendChild(metaOgType);
+
+    const metaOgUrl = document.createElement('meta');
+    metaOgUrl.setAttribute('content', '');
+    metaOgUrl.setAttribute('property', 'og:url');
+    head.appendChild(metaOgUrl);
+
+    const metaOgImage = document.createElement('meta');
+    metaOgImage.setAttribute('content', '');
+    metaOgImage.setAttribute('property', 'og:image');
+    head.appendChild(metaOgImage);
+
+    const linkFavicon = document.createElement('link');
+    linkFavicon.setAttribute('href', '/favicon.ico');
+    linkFavicon.setAttribute('rel', 'icon');
+    linkFavicon.setAttribute('sizes', 'any');
+    head.appendChild(linkFavicon);
+
+    const linkIconSvg = document.createElement('link');
+    linkIconSvg.setAttribute('href', '/icon.svg');
+    linkIconSvg.setAttribute('rel', 'icon');
+    linkIconSvg.setAttribute('type', 'image/svg+xml');
+    head.appendChild(linkIconSvg);
+
+    const linkAppleTouchIcon = document.createElement('link');
+    linkAppleTouchIcon.setAttribute('href', '/icon.png');
+    linkAppleTouchIcon.setAttribute('rel', 'apple-touch-icon');
+    head.appendChild(linkAppleTouchIcon);
+
+    const linkManifest = document.createElement('link');
+    linkManifest.setAttribute('href', '/site.webmanifest');
+    linkManifest.setAttribute('rel', 'manifest');
+    head.appendChild(linkManifest);
+
+    const metaThemeColor = document.createElement('meta');
+    metaThemeColor.setAttribute('content', '#fafafa');
+    metaThemeColor.setAttribute('name', 'theme-color');
+    head.appendChild(metaThemeColor);
 }
 
-/**
- * Loads a block named 'footer' into footer
- * @param footer footer element
- * @returns {Promise}
- */
+async function loadHead(head) {
+    await injectMeta(head);
+    await addUmamiAnalytics(head);
+}
+
 async function loadFooter(footer) {
     footer.appendChild(document.createElement('hr'));
     const greetings = document.createElement('p');

@@ -1,7 +1,8 @@
 {
-    "name": "lucanerlich.com-v7",
+    "name": "gaming.lucanerlich.com",
     "version": "0.0.1",
-    "description": "lucanerlich.com-v7",
+    "description": "gaming.lucanerlich.com",
+    "homepage": "gaming.lucanerlich.com",
     "private": false,
     "keywords": [
         ""
