@@ -29,6 +29,10 @@ a {
     font-weight: 500;
 }
 
+li {
+    text-underline-offset: 6px;
+}
+
 blockquote {
     font-family: monospace;
     padding: 1rem 1rem;
